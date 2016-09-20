@@ -1,18 +1,9 @@
-# 1. Configure Development Environment
+# Start up the system
 
-  * Webpack (without Babel or React).
-  * Source Maps
   
-
 ### Steps:
 
-  * Init NPM project: `npm init`
-  * Install Webpack: `npm i -D webpack`
-  * Configure `webpack.config.js`
-  * Create `index.html` which uses the output bundle
-  * Create entry script: `./src/client.js` or whatever.
-  * Run webpack:
-    * Create script in `package.json` to run webpack.
-    * Run webpack.
-  * Open `index.html` to test output.
+  * Install project dependencies: `npm install`
+  * Run webpack `npm run dev`
+  * Open  [localhost:8080](http://localhost:8080/webpack-dev-server/) to test `index.html` output.
    
