@@ -1,15 +1,19 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import './App.css';
+import Navigation from '../Navigation';
 
 export default class App extends Component {
-  constructor(){
-    super();
-    this.name = 'Will';
-  }
   render() {
     return (
       <div className="App">
-      Hello World!! This is {this.name}' First React Component
+        <Navigation logo="https://facebook.github.io/react/img/logo.svg">
+          <li className="active">Page 1</li>
+          <li>Page 2</li>
+          <li>Page 3</li>
+        </Navigation>
+        <div className="App__content">
+          Here is my content!
+        </div>
       </div>
     );
   }
