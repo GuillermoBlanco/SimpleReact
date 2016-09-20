@@ -1,3 +1,5 @@
-document.getElementById('root').innerText = 'Hello World, I\'m using Webpack \n ohohohooho!!';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { App } from './components';
 
-console.log("hola, caracola");
+ReactDOM.render(<App />, document.getElementById('root'));
