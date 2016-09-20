@@ -22,6 +22,7 @@ if (__TARGET__ === 'dev') {
     },
     module: {
       loaders: [
+        { test: /\.css$/, loaders: ['style', 'css'], include: path.join(__dirname, 'src') },
         { test: /\.jsx?$/, loaders: ['react-hot-loader/webpack', 'babel'], include: path.join(__dirname, 'src') },
       ],
     },
@@ -48,6 +49,7 @@ else {
   },
     module: {
       loaders: [
+        { test: /\.css$/, loaders: ['style', 'css'], include: path.join(__dirname, 'src') },
         { test: /\.jsx?$/, loader: 'babel', include: path.join(__dirname, 'src') },
       ],
     },
