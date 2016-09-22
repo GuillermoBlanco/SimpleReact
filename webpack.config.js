@@ -42,7 +42,7 @@ else {
     devtool: '#source-map',
     entry: './src/client.js',
     output: {
-    path: path.join(__dirname, 'dist'),
+      path: path.join(__dirname, 'dist'),
       filename: 'bundle.js',
       sourceMapFilename: 'bundle.map',
       publicPath: '/dist/',

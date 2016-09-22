@@ -36,6 +36,10 @@
             "jsx": true
         }
    },
+   "compilerOptions": { 
+     "target": "ES6", 
+     "module": "commonjs" 
+  },
   "plugins": [
     "babel",
     "react"
@@ -88,7 +92,6 @@
     "no-caller": 1,
     "no-div-regex": 1,
     "no-else-return": 1,
-    "no-empty-label": 1,
     "no-eq-null": 0,
     "no-eval": 1,
     "no-extend-native": 1,
@@ -195,7 +198,7 @@
     "space-before-function-paren": [1, "never"],
     "space-in-parens": [1, "never"],
     "space-infix-ops": 1,
-    "space-return-throw-case": 1,
+    "keyword-spacing": 1,
     "space-unary-ops": 0,
     "spaced-comment": [1, "always"],
     "wrap-regex": 1,
@@ -230,8 +233,8 @@
     "react/jsx-boolean-value": 1,
     "react/jsx-no-duplicate-props": 1,
     "react/jsx-no-undef": 1,
-    "react/jsx-quotes": [1, "single"],
-    "react/jsx-sort-prop-types": 1,
+    //"react/jsx-quotes": [1, "single"],
+    //"react/jsx-sort-prop-types": 1,
     "react/jsx-sort-props": 0,
     "react/jsx-uses-react": 1,
     "react/jsx-uses-vars": 1,
