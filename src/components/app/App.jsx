@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import './App.css';
 import Navigation from '../Navigation';
+import Course from '../Course';
 
 export default class App extends Component {
   static navItems = [
@@ -16,7 +17,7 @@ export default class App extends Component {
   _onNavItemClick = (event) => {
     const id = event.target.id;
     const { activeNavItem } = this.state;
-
+    console.log('New event!!', event);
     if (id !== activeNavItem) {
       this.setState({ activeNavItem: id });
     }
@@ -52,6 +53,7 @@ export default class App extends Component {
             value={value}
             onChange={(event) => this.setState({ value: event.target.value })}
           />
+          <Course courseId={1}/>
           <p>{value}</p>
         </div>
       </div>

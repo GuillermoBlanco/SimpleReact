@@ -11,10 +11,10 @@ export default class Navigation extends Component {
       // clonedProps: this.props,
     });
   }
-  componentDidMount() {
-    console.log('All of this ', this);
-    console.log('State ', this.state);
-  }
+  // componentDidMount() {
+  //   console.log('All of this ', this);
+  //   console.log('State ', this.state);
+  // }
   render() {
     const { children, logo } = this.props;
     return (
