@@ -3,15 +3,31 @@ import './App.css';
 import Navigation from '../Navigation';
 import Course from '../Course';
 
+import CourseStore from '../../stores/CourseStore';
+import * as FellowActions from '../../actions/FellowActions';
+
 export default class App extends Component {
-  static navItems = [
-    {id: 'search', content: 'Search'},
-    {id: 'lifecycle-methods', content: 'Lifecycle Methods'},
-    {id: 'contact', content: 'Contact'},
-  ];
+  // static navItems = [
+  //   {id: 'search', content: 'Search course'},
+  //   {id: 'lifecycle-methods', content: 'Lifecycle Methods course'},
+  //   {id: 'contact', content: 'Contact course'},
+  // ];
   constructor(props, context) {
     super(props, context);
-    this.state = { activeNavItem: 'search', value: '' };
+    this.state = {
+      activeNavItem: 'search',
+      value: '',
+      filter: '',
+      courses: CourseStore.getAllCourses(),
+    };
+  }
+
+  enroll() {
+    if (this.state.value) {FellowActions.enrollFellow(this.state.value, this.state.activeNavItem);}
+  }
+
+  updateUserInput(e) {
+    this.setState({ filter: e.target.value });
   }
 
   _onNavItemClick = (event) => {
@@ -24,10 +40,10 @@ export default class App extends Component {
   }
 
   _renderNavItems() {
-    const navItems = App.navItems;
-    const { activeNavItem } = this.state;
+    // const navItems = App.navItems;
+    const { activeNavItem, courses } = this.state;
 
-    return navItems.map((navItem, index) => {
+    return courses.map((navItem, index) => {
       const { content, id } = navItem;
       const key = `app-nav-item-${index}`;
       const className = activeNavItem === id ? 'active' : '';
@@ -39,21 +55,29 @@ export default class App extends Component {
   }
 
   render() {
+      // <Navigation logo="https://facebook.github.io/react/img/logo.svg">
     const { activeNavItem, value } = this.state;
     console.log('Render app component');
     return (
       <div className="App">
-        <Navigation logo="https://facebook.github.io/react/img/logo.svg">
+        <Navigation logo="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQOufBsWKd7XdjcHCphRfFsoWMNrrTBxujV6B-Xjpq3n-Er0NYEDA">
           {this._renderNavItems()}
         </Navigation>
         <div className="App__content">
-          Filtra en {activeNavItem}
+          Curso: {activeNavItem}.<p> Nuevo alumno: </p>
           <input
             type="text"
             value={value}
             onChange={(event) => this.setState({ value: event.target.value })}
           />
-          <Course courseId={1}/>
+          <button onClick={this.enroll.bind(this)}>Enroll!</button>
+          <p>Alumnos:</p>
+          <input
+            type="text"
+            placeholder="Filtrar por nombre ..."
+            onChange={this.updateUserInput.bind(this)}
+          />
+          <Course courseId={activeNavItem} filter={this.state.filter}/>
           <p>{value}</p>
         </div>
       </div>
