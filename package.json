@@ -1,5 +1,5 @@
 {
-  "name": "react-training",
+  "name": "simplereact",
   "version": "1.0.0",
   "description": "",
   "main": "webpack.config.js",
@@ -8,7 +8,7 @@
   "scripts": {
     "dev": "webpack-dev-server",
     "build": "webpack",
-    "start": "webpack"
+    "start": "PORT=80 webpack"
   },
   "devDependencies": {
     "babel-core": "^6.14.0",
