@@ -2,3 +2,5 @@ language: node_js
 node_js:
   - "6.6"
 script: npm run build
+notifications:
+  slack: reactionarios:L5Zu4NbOzPoef6fGXYur4vLv
